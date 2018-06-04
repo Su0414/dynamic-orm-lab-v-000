@@ -21,13 +21,11 @@ class InteractiveRecord
   end
 
   def initialize
-
+    Student.new
   end
 
-  def attr_accessor
-    self.column_names.each do |col_name|
+  Student.column_names.each do |col_name|
       attr_accessor col_name.to_sym
-    end
   end
 
   def save
