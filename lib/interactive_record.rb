@@ -26,10 +26,15 @@ class InteractiveRecord
     end
   end
 
+  def some_instance_method
+    self.class.some_class_method
+  end
+  
   def save
   end
 
   def table_name_for_insert
+    self.class.table_name
   end
 
   def col_names_for_insert
