@@ -6,5 +6,4 @@ class Student < InteractiveRecord
 
 attr_accessor :name, :grade
 
-
 end
