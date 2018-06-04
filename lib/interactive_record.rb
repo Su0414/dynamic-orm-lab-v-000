@@ -1,6 +1,8 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
 
+require 'pry'
+
 class InteractiveRecord
   def self.table_name
     Student.to_s.downcase.pluralize
@@ -53,6 +55,7 @@ class InteractiveRecord
 
   def self.find_by_name(f_name)
     sql = "SELECT * FROM #{Student.table_name} WHERE name = #{f_name}"
+    binding.pry
     DB[:conn].execute(sql)
   end
 
