@@ -54,11 +54,13 @@ class InteractiveRecord
   end
 
   def self.find_by_name(f_name)
-    sql = "SELECT * FROM #{Student.table_name} WHERE name = '#{f_name}'"  
+    sql = "SELECT * FROM #{Student.table_name} WHERE name = '#{f_name}'"
     DB[:conn].execute(sql)
   end
 
-  def self.find_by
+  def self.find_by(attr={})
+    sql = "SELECT * FROM #{Student.table_name} WHERE attr.name = '#{attr.value}'"
+    DB[:conn].execute(sql)
   end
 
 end
