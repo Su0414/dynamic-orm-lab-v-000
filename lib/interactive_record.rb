@@ -20,14 +20,16 @@ class InteractiveRecord
       column_names.compact
   end
 
-  def initialize(params={})
-    params.each do |property, value|
-      self.send("#{property}=", value)
+
+
+  def initialize
+    self.column_names.each do |col_name|
+      attr_accessor col_name.to_sym
     end
   end
 
   def save
-    
+
   end
 
   def table_name_for_insert
