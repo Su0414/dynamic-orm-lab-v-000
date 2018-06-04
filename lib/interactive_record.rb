@@ -59,6 +59,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attr={})
+    sql = nil
     attr.each do |n, v|
       sql = "SELECT * FROM #{Student.table_name} WHERE #{n} = '#{v}'"
     end
