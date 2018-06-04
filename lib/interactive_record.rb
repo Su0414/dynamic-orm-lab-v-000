@@ -21,7 +21,7 @@ class InteractiveRecord
   end
 
   def initialize
-  
+
   end
 
   Student.column_names.each do |col_name|
